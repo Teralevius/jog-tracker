@@ -11,14 +11,17 @@ import './App.css';
 import LoginComponent from './components/login/loginComponent';
 
 function App(props) {
-  const [filter, togleFilter] = useState({});
+  const [filterBarIsOn, setDisplayFilterBar] = useState(false);
+  const toggleFilterBar = () => setDisplayFilterBar(!filterBarIsOn);
 
   return (
     <Router >
-      <Header  />
+      <Header filterOnClick={toggleFilterBar} />
       <div className="mainContent">
           <Switch>
-            <Route path="/jogs" component={JogListComponent}/>
+            <Route path="/jogs">
+              <JogListComponent displayFilter={filterBarIsOn} />
+            </Route>/>
             <Route path="/addjogs" component={JogAddForm}/>
             <Route path="/" exact component={LoginComponent}/>
           </Switch>

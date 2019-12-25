@@ -1,11 +1,18 @@
+.listContainer{
+    margin-top: 3.3rem;
+}
+
 .jogsListItem {
     display: flex;
-    align-items: center;
     margin-bottom: 4.9rem;
 }
 .itemInfo{
     display:flex;
     flex-direction: column;
+}
+
+.dateField {
+    margin-bottom: 0.56rem;
 }
 
 .itemImg{

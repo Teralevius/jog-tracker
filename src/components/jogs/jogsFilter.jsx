@@ -3,11 +3,11 @@ import React from 'react';
 import InputField from './inputField';
 import './jogs.css';
 
-const JogsFilter = () => (
-    <div className='jogFilter'>
-        <InputField name='Date from' />
-        <InputField name='Date to' />
-    </div>
+const JogsFilter = ({filterIsOn, onChange}) => (
+    filterIsOn ? <div className='jogFilter'>
+        <InputField onChange={onChange} name='Date from' />
+        <InputField onChange={onChange} name='Date to' />
+    </div> : null
 );
 
 export default JogsFilter;

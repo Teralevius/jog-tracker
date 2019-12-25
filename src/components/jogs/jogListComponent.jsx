@@ -7,10 +7,16 @@ import {getJogs} from '../../requests';
 import add from '../../assets/add.svg';
 import './jogs.css';
 
-const JogListComponent = (items) => {
+const JogListComponent = ({displayFilter}) => {
     const [jogs, setJog] = useState([]);
-    let history = useHistory()
+    const history = useHistory()
     const currentUsr = JSON.parse(window.localStorage.getItem('user'));
+    const [jogFilter, setJogFilter] = useState({});
+
+    const handleSetFilter = (event) => setJogFilter({
+        ...jogFilter,
+        [event.target.name]: event.target.value,
+    }); 
 
     useEffect(() => {
         const fetchJogs = async () => {
@@ -22,8 +28,8 @@ const JogListComponent = (items) => {
 
     return (
         <React.Fragment>
-            <JogsFilter />
-            <div>
+            <JogsFilter onChange={handleSetFilter} filterIsOn={displayFilter} />
+            <div className='listContainer'>
                 {jogs.filter(item => item.user_id === currentUsr.id).map((item) => <JogListItem key={item.id} {...item}/>)}
                 <img onClick={()=> history.push('/addjogs')} className='addJog' src={add} alt='Add' />
             </div>  

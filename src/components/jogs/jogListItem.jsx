@@ -4,7 +4,9 @@ import itemImg from '../../assets/icon.svg';
 import './jogs.css';
 
 const JogListItem = ({ id, date, distance, time}) =>{
-    const jogDate = new Date(date)
+    const jogDate = new Date(date);
+    
+
     return (
         <div key={id} className='jogsListItem'>
             <img src={itemImg} className='itemImg' alt='Item'/>
@@ -12,7 +14,7 @@ const JogListItem = ({ id, date, distance, time}) =>{
                 <p className='dateField'>{`${jogDate.getDay()}.${jogDate.getDay()}.${jogDate.getFullYear()}`}</p>
                 <div className='infoField'>
                     <span>Speed:</span>
-                    <span>{(distance/time).toString()}</span>
+                    <span>{Math.ceil(distance/time).toString()}</span>
                 </div>
                 <div className='infoField'>
                     <span>Distance:</span>
