@@ -1,0 +1,51 @@
+.jogsListItem {
+    display: flex;
+    align-items: center;
+}
+.itemInfo{
+    display:flex;
+    flex-direction: column;
+}
+
+.itemImg{
+    width: 5.4rem;
+    height: 5.4rem;
+    object-fit: contain;
+    margin-right: 2.8rem;
+    margin-bottom: 0.2rem;
+}
+
+.infoField{
+    margin-bottom: 0.75rem;
+}
+
+.infoField{
+    margin-bottom: 0.55rem;
+}
+
+.addFormContainer{
+    position: relative;
+    border-radius: 2.75rem;
+    height: 23.7rem;
+    background-color: #7ed321;
+    padding: 6.25rem 5.5rem 2.9rem;
+}
+
+.cancleJogAddForm{
+    position: absolute;
+    top: 1.5rem;
+    right: 1.7rem;
+}
+
+input {
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: solid 1px #979797;
+    margin-bottom: 1.56rem;
+}
+
+.addJog {
+    position: fixed;
+    bottom: 2.5rem;
+    right: 2.5rem;
+}

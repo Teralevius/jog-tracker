@@ -1,0 +1,17 @@
+button {
+    width: 100%;
+    height: 2.625rem;
+    border-radius: 36px;
+    background: none;
+    border: solid 3px #ffffff;
+    color: #ffffff;
+    cursor: pointer; 
+    text-align: center;
+    font-family: SFUIText-Bold;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+}
