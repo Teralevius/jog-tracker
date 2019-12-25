@@ -4,7 +4,7 @@ import logo from '../../assets/logo_bear.png'
 import './header.css';
 import NavMenu from './navMenu';
 
-const array = [{text: 'JOGS', path:'/pop'},{text: 'INFO', path:'/'},{text: 'CONTACT US', path:'/'}]
+const array = [{text: 'JOGS', path:'/jogs'},{text: 'INFO', path:'/info'},{text: 'CONTACT US', path:'/contactus'}]
 
 const Header = () => (
     <div className="header">

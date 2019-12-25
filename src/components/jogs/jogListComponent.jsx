@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import JogListItem from './jogListItem';
+import JogsFilter from './jogsFilter';
 import {getJogs} from '../../requests';
 import add from '../../assets/add.svg';
 import './jogs.css';
@@ -9,6 +10,8 @@ import './jogs.css';
 const JogListComponent = (items) => {
     const [jogs, setJog] = useState([]);
     let history = useHistory()
+    const currentUsr = JSON.parse(window.localStorage.getItem('user'));
+
     useEffect(() => {
         const fetchJogs = async () => {
         const fetchedJogs = await getJogs();
@@ -17,13 +20,15 @@ const JogListComponent = (items) => {
         fetchJogs();
     },[]);
 
-    console.log(jogs)
-
-    return(
-        <div>
-            {jogs.filter(item =>(true)).map((item)=> <JogListItem speed={item.speed}/>)}
-            <img onClick={()=> history.push('/addjogs')} className='addJog' src={add} alt='Add' />
-        </div>)
+    return (
+        <React.Fragment>
+            <JogsFilter />
+            <div>
+                {jogs.filter(item => item.user_id === currentUsr.id).map((item) => <JogListItem key={item.id} {...item}/>)}
+                <img onClick={()=> history.push('/addjogs')} className='addJog' src={add} alt='Add' />
+            </div>  
+        </React.Fragment>
+        )
 
 };
 

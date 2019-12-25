@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 import './login.css';
 import bear from '../../assets/bear-face.png';
 import Button from '../button/button';
-import { login, getUser, getJogs } from '../../requests'
+import { login } from '../../requests'
 
 
 

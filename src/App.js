@@ -3,7 +3,7 @@ import {HashRouter as Router,
   Switch,
   Route
 } from 'react-router-dom';
-import { createBrowserHistory } from "history";
+
 import Header from './components/header/header';
 import JogListComponent from './components/jogs/jogListComponent';
 import JogAddForm from './components/jogs/jodAddFrom';
@@ -15,7 +15,7 @@ function App(props) {
 
   return (
     <Router >
-      <Header filter={setFilter} />
+      <Header  />
       <div className="mainContent">
           <Switch>
             <Route path="/jogs" component={JogListComponent}/>

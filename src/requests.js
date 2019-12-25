@@ -12,7 +12,7 @@ export const login = (func) => fetch(`${serverURL}/auth/uuidLogin`, {
 .then(body =>{ 
     window.localStorage.setItem('access_token', body.response.access_token)
     return getUser();
-}).then(body => {console.log(body);return body;}).then(func());
+}).then(func());
 
 export const getJogs = () => fetch(`${serverURL}/data/sync`, {
     method: 'GET',
@@ -28,4 +28,7 @@ export const getUser = () => fetch(`${serverURL}/auth/user`, {
     headers:{
         Authorization: `Bearer ${window.localStorage.getItem('access_token')}`,
     }
-}).then(response => response.json()).then(body => window.localStorage.setItem('user', body.response.access_token));
+}).then(response => response.json()).then( body => {
+    window.localStorage.setItem('user', JSON.stringify(body.response));
+    return body.response;
+});
