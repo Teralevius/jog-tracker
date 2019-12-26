@@ -1,13 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-import filter from '../../assets/filter.svg'
-import './navMenu.css'
+import filterOff from '../../assets/filter.svg';
+import filterOn from '../../assets/filter-active.svg';
+import './navMenu.css';
 
-const NavMenu = ({items, filterOnClick}) => (
+const NavMenu = ({ filterIconState,items, filterOnClick }) => (
     <div className='navMenu'>
-        {items.map((current, index) => (<Link key={index} to={current.path}><a className='navItem' key={index} href='/#'>{current.text}</a></Link>) )}
-        <img src={filter} onClick={filterOnClick} alt='Filter' />
+        {items.map((current, index) => (<NavLink activeClassName='is-active' className='navItem' key={index} to={current.path}>{current.text}</NavLink>) )}
+        <div className='imgFilterContainer'>
+            <img src={ filterIconState ? filterOn : filterOff } onClick={filterOnClick} alt='Filter' />  
+        </div>
+        
     </div>
 );
 

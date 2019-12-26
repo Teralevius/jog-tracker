@@ -7,8 +7,10 @@ import {HashRouter as Router,
 import Header from './components/header/header';
 import JogListComponent from './components/jogs/jogListComponent';
 import JogAddForm from './components/jogs/jodAddFrom';
-import './App.css';
+import InfoComponent from './components/info/infoComponent';
 import LoginComponent from './components/login/loginComponent';
+import './App.css';
+import './assets/fonts/style.css'
 
 function App(props) {
   const [filterBarIsOn, setDisplayFilterBar] = useState(false);
@@ -16,14 +18,16 @@ function App(props) {
 
   return (
     <Router >
-      <Header filterOnClick={toggleFilterBar} />
-      <div className="mainContent">
+      <Header filterIconState={filterBarIsOn} filterOnClick={toggleFilterBar} />
+      <div className='mainContent'>
           <Switch>
-            <Route path="/jogs">
+            <Route path='/jogs'>
               <JogListComponent displayFilter={filterBarIsOn} />
             </Route>/>
-            <Route path="/addjogs" component={JogAddForm}/>
-            <Route path="/" exact component={LoginComponent}/>
+            <Route path='/addjogs' component={JogAddForm}/>
+            <Route path='/info' component={InfoComponent}/>
+            <Route path='/contactus' component={InfoComponent}/>
+            <Route path='/' exact component={LoginComponent}/>
           </Switch>
        
       </div>      

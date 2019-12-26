@@ -4,8 +4,7 @@
 }
 
 .navItem {
-    height: 1rem;
-    font-family: SFUIText;
+    font-family: 'SF UI Text Regular';
     font-size: 1rem;
     font-weight: bold;
     font-stretch: normal;
@@ -14,5 +13,20 @@
     letter-spacing: normal;
     text-align: center;
     color: white;
-    padding-right: 2.9rem;
+    margin-top: 6px;
+    margin-right: 2.9rem;
+    text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+}
+.navItem.is-active{
+    border-color: #fff;
+}
+
+.imgFilterContainer {
+    display: flex;
+    height: 2.25rem;
+    width: 2.25rem;
+    justify-content: center;
+    align-items: center;
 }

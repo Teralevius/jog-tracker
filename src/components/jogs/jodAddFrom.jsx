@@ -3,7 +3,9 @@ import React from 'react';
 import cancle from '../../assets/cancel.svg';
 import Button from '../button/button';
 import InputField from './inputField';
+import DatePicker from '../datePicker/datePicker';
 import { useHistory } from 'react-router-dom';
+import { postJog } from '../../requests'
 
 const JogAddFrom = () => {
     const [newJog, setNewJog] = React.useState({});
@@ -21,9 +23,9 @@ const JogAddFrom = () => {
                 <div>
                     <InputField onChange={handleInputChange} name='Distance' />
                     <InputField onChange={handleInputChange} name='Time' />
-                    <InputField onChange={handleInputChange} name='Date' />
+                    <DatePicker onChange={handleInputChange} name='Date' />
                 </div>
-                <Button onClick={()=> console.log(newJog)} btnName='Save'/>
+                <Button onClick={()=> postJog(newJog)} btnName='Save'/>
             </div>
         </div>
     )
