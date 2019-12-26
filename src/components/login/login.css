@@ -13,3 +13,27 @@
 .loginImage {
     height: 9.5rem;
 }
+
+@media screen and (max-width: 768px) {
+    .login {
+        height: auto;
+        margin: 141px 0;
+        padding: 0;
+        background-color: transparent;
+    }
+
+    .login button {
+        width: 150px;
+        height: 60px;
+        color: #e990f9;
+        border-color: #e990f9;
+    }
+
+    .login svg {
+        margin-bottom: 100px;
+    }
+
+    .login svg *{
+        fill: #e990f9;
+    }
+}

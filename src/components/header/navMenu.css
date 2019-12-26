@@ -5,7 +5,7 @@
 
 .navItem {
     font-family: 'SF UI Text Regular';
-    font-size: 1rem;
+    font-size: 0.875rem;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -30,4 +30,15 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+
+    .navMenu {
+        flex-direction: row-reverse;
+    }
+
+    .imgFilterContainer{
+        margin-right: 45px;
+    }
 }

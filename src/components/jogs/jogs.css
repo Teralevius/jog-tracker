@@ -1,5 +1,6 @@
 .listContainer{
     margin-top: 3.3rem;
+    width: 100%;
 }
 
 .jogsListItem {
@@ -48,6 +49,7 @@
     position: absolute;
     top: 1.5rem;
     right: 1.7rem;
+    cursor: pointer;
 }
 
 input {
@@ -118,4 +120,57 @@ input {
 .itemImgWrapper{
     width: 50%;
     text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+    .addJog {
+        width: 47px;
+        height: auto;
+        bottom: 2rem;
+        right: 2rem;
+    }
+    
+    .listContainer {
+        overflow-y: hidden;
+    }
+
+    .jogsListItem {
+        padding-bottom: 32px;
+        margin-bottom: 48px;
+        border-bottom: 2px solid #d7d7d7;
+    }
+
+    .cancleJogAddForm {
+        width: 18px;
+        height: 19px;
+    }
+
+    .addFormContainer {
+        padding: 64px 38px 50px;
+        width: calc(100% - 68px);
+        height: auto;
+        min-width: auto;
+        margin: 82px 0;
+    }
+
+    .addJogFormField {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .addJogFormField span {
+        margin-bottom: 6px;
+    }
+
+    .addJogFormField input {
+        margin-bottom: 20px;
+    }
+
+    .addJogFormField:last-child input{
+        margin-bottom: 40px;
+    }
+
+    .addFormContainer .addJogFormField input {
+        min-width: auto;
+    }
 }

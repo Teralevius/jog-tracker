@@ -5,8 +5,8 @@ import './jogs.css';
 
 const JogsFilter = ({filterIsOn, onChange}) => (
     filterIsOn ? <div className='jogFilter'>
-        <DatePicker onChange={onChange} name='Date from' />
-        <DatePicker onChange={onChange} name='Date to' />
+      <DatePicker onChange={onChange} name='Date from' />
+      <DatePicker onChange={onChange} name='Date to' />
     </div> : null
 );
 
