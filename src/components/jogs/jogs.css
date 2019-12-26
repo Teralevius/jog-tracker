@@ -4,11 +4,14 @@
 
 .jogsListItem {
     display: flex;
+    justify-content: center;
     margin-bottom: 4.9rem;
 }
 .itemInfo{
     display:flex;
     flex-direction: column;
+    width: 50%;
+    font-size: 14px;
 }
 
 .dateField {
@@ -105,4 +108,14 @@ input {
     align-items: center;
     justify-content: space-between;
     padding: 5rem 11rem 2rem;
+}
+
+.infoField span:first-child {
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+.itemImgWrapper{
+    width: 50%;
+    text-align: right;
 }

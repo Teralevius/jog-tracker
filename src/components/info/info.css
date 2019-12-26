@@ -1,13 +1,39 @@
+.infoComponent{
+    font-family: 'SF UI Text Regular';
+    margin-top: 85px;
+    max-width: 665px;
+    padding: 0 25px;
+}
+
 .infoHead {
     width: 89px;
     height: 43px;
-    font-family: 'SF UI Text Regular';
     font-size: 36px;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: center;
     color: #7ed321;
+    margin-bottom: 15px;
+}
+
+.infoComponent p {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 60px;
+}
+
+@media screen and (max-width: 768px) { 
+
+    .infoComponent{
+        font-family: 'SF UI Text Regular';
+        margin-top: 25px;
+    }
+
+    .infoHead { 
+        font-size: 25px;
+        margin-bottom: 6px;
+    }
+
+    .infoComponent p {
+        font-size: 12px;
+        margin-bottom: 40px;
+    }
 }
