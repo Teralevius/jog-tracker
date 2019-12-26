@@ -1,7 +1,7 @@
 const serverURL = 'https://jogtracker.herokuapp.com/api/v1';
 
 
-export const login = (func) => fetch(`${serverURL}/auth/uuidLogin`, {
+export const getToken = (callBackFunc) => fetch(`${serverURL}/auth/uuidLogin`, {
     method: 'POST',
     cache: 'no-cache',
     headers:{
@@ -9,10 +9,10 @@ export const login = (func) => fetch(`${serverURL}/auth/uuidLogin`, {
     },
     body: `${encodeURIComponent('uuid')}=${encodeURIComponent('hello')}`
 }).then(response => response.json())
-.then(body =>{ 
+.then( body => { 
     window.localStorage.setItem('access_token', body.response.access_token)
-    return getUser();
-}).then(func());
+    return getUser(callBackFunc);
+});
 
 export const getJogs = () => fetch(`${serverURL}/data/sync`, {
     method: 'GET',
@@ -22,7 +22,7 @@ export const getJogs = () => fetch(`${serverURL}/data/sync`, {
     }
 });
 
-export const getUser = () => fetch(`${serverURL}/auth/user`, {
+export const getUser = (callBackFunc) => fetch(`${serverURL}/auth/user`, {
     method: 'GET',
     cache: 'no-cache',
     headers: {
@@ -31,7 +31,7 @@ export const getUser = () => fetch(`${serverURL}/auth/user`, {
 }).then(response => response.json()).then( body => {
     window.localStorage.setItem('user', JSON.stringify(body.response));
     return body.response;
-});
+}).then(callBackFunc());
 
 export const postJog = (jog) => fetch(`${serverURL}/data/jog`, {
     method: 'POST',

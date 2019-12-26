@@ -14,11 +14,12 @@ import './assets/fonts/style.css'
 
 function App(props) {
   const [filterBarIsOn, setDisplayFilterBar] = useState(false);
+  const [isLogin, setLogin] = useState(false); 
   const toggleFilterBar = () => setDisplayFilterBar(!filterBarIsOn);
 
   return (
     <Router >
-      <Header filterIconState={filterBarIsOn} filterOnClick={toggleFilterBar} />
+      <Header isLogin={isLogin} filterIconState={filterBarIsOn} filterOnClick={toggleFilterBar} />
       <div className='mainContent'>
           <Switch>
             <Route path='/jogs'>
@@ -27,9 +28,10 @@ function App(props) {
             <Route path='/addjogs' component={JogAddForm}/>
             <Route path='/info' component={InfoComponent}/>
             <Route path='/contactus' component={InfoComponent}/>
-            <Route path='/' exact component={LoginComponent}/>
+            <Route path='/'>
+              <LoginComponent setLogin={setLogin} />
+            </Route>
           </Switch>
-       
       </div>      
     </Router>
   );
